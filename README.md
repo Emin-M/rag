@@ -55,8 +55,6 @@ OPENAI_API_KEY=your_openai_api_key_here
 | `POST` | `/documents/upload` | Upload a PDF file. | `multipart/form-data` with `file` field | `{ "id": "uuid", "name": "example.pdf", "path": "uploads/example.pdf", "status": "PENDING", "createdAt": "...", "updatedAt": "..." }` |
 | `POST` | `/documents/:id/process` | Extract text, chunk, generate embeddings, and save to DB. | None | `{ "message": "Document processed successfully" }` |
 | `POST` | `/documents/query` | Search documents using text query via vector similarity. | `{ "query": "Can horses speak?" }` | `[ { "content": "Horses can speak human languages", "similarity": 0.87, "documentId": "uuid", "position": 2 } ]` |
-| `GET` | `/documents` | List all uploaded documents. | None | `[ { "id": "uuid", "name": "example.pdf", "status": "COMPLETED", ... } ]` |
-| `GET` | `/documents/:id` | Get info about a specific document. | None | `{ "id": "uuid", "name": "example.pdf", "status": "COMPLETED", ... }` |
 
 ---
 
